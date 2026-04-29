@@ -7,6 +7,8 @@ public class Goal : MonoBehaviour
     public int score;
     public int rounds;
 
+    public AudioSource goalSound;
+
     public int totalRounds;
     public BallSpawner ballSpawner;
     public static Goal goaaal;
@@ -31,6 +33,12 @@ public class Goal : MonoBehaviour
         if (other.CompareTag("Ball"))
         {
             goaaal.score++;
+
+            if (goalSound != null)
+            {
+                goalSound.Play();
+            }
+
             Destroy(other.gameObject);
         }
     }
