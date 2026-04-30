@@ -145,23 +145,23 @@ namespace OVRTouchSample
         // Simple Dash support. Just hide the hands.
         private void OnInputFocusLost()
         {
-            if (gameObject.activeInHierarchy)
-            {
-                m_showAfterInputFocusAcquired.Clear();
-                Renderer[] renderers = GetComponentsInChildren<Renderer>();
-                for (int i = 0; i < renderers.Length; ++i)
-                {
-                    if (renderers[i].enabled)
-                    {
-                        renderers[i].enabled = false;
-                        m_showAfterInputFocusAcquired.Add(renderers[i]);
-                    }
-                }
+            // if (gameObject.activeInHierarchy)
+            // {
+            //     m_showAfterInputFocusAcquired.Clear();
+            //     Renderer[] renderers = GetComponentsInChildren<Renderer>();
+            //     for (int i = 0; i < renderers.Length; ++i)
+            //     {
+            //         if (renderers[i].enabled)
+            //         {
+            //             renderers[i].enabled = false;
+            //             m_showAfterInputFocusAcquired.Add(renderers[i]);
+            //         }
+            //     }
 
-                CollisionEnable(false);
+            //     CollisionEnable(false);
 
-                m_restoreOnInputAcquired = true;
-            }
+            //     m_restoreOnInputAcquired = true;
+            // }
         }
 
         private void OnInputFocusAcquired()

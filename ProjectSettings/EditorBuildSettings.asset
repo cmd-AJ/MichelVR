@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu2.unity
     guid: a48cdcd86ad823d46889443ac75c5612
   - enabled: 1
-    path: Assets/Scenes/WIN.unity
-    guid: 61bcaaa02e7d74e4facea38cc03a777a
+    path: Assets/ScoreMenu 1.unity
+    guid: 368c44688e8bbf347b55db4f8d8c0309
   - enabled: 1
     path: Assets/Gameplay1.unity
     guid: 95a86103dce6f6b45941a8cdcf10b700
@@ -18,11 +18,17 @@ EditorBuildSettings:
     path: Assets/Gameplay2.unity
     guid: 9516790390ef3d443928e57375068d0c
   - enabled: 1
+    path: Assets/Gameplay3.unity
+    guid: fdfa9c394d75bc841bb8d89454c6dc27
+  - enabled: 1
     path: Assets/Gameplay4.unity
     guid: e97cf248f6693514a8da5123c23d0b88
   - enabled: 1
     path: Assets/Gameplay5.unity
     guid: b1266320502a5fa43a0bde9207691f83
+  - enabled: 1
+    path: Assets/Scenes/WIN.unity
+    guid: 61bcaaa02e7d74e4facea38cc03a777a
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 8299efd1291a74a48b7dbbf195286be5,
       type: 2}

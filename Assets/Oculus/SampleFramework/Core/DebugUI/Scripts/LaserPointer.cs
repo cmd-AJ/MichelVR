@@ -73,6 +73,7 @@ public class LaserPointer : OVRCursor
     private void Start()
     {
         if (cursorVisual) cursorVisual.SetActive(false);
+        laserBeamBehavior = LaserBeamBehavior.On;
         OVRManager.InputFocusAcquired += OnInputFocusAcquired;
         OVRManager.InputFocusLost += OnInputFocusLost;
     }
@@ -93,6 +94,7 @@ public class LaserPointer : OVRCursor
 
     private void LateUpdate()
     {
+        lineRenderer.enabled = true;
         lineRenderer.SetPosition(0, _startPoint);
         if (_hitTarget)
         {
