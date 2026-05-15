@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.6416503, g: 0.5053258, b: 0.2076244, a: 1}
+  m_IndirectSpecularColor: {r: 0.66388565, g: 0.51061565, b: 0.21608777, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -50308,7 +50308,7 @@ MonoBehaviour:
   shootDelay: 5
   Rounds: 10
   goalClip: {fileID: 8300000, guid: 7a58a9d4cfba97d44838a6d9281faea8, type: 3}
-  sceneToLoad: 6
+  sceneToLoad: 5
   destroyTime: 2
   soundDelay: 6
   indicators:
@@ -58553,6 +58553,7 @@ GameObject:
   - component: {fileID: 633573726}
   - component: {fileID: 633573725}
   - component: {fileID: 633573724}
+  - component: {fileID: 633573727}
   m_Layer: 0
   m_Name: MarcadorJugador
   m_TagString: Untagged
@@ -58586,12 +58587,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 633573722}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e449e96192146c4ea5eff6cc9d068b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 0
+  textDelay: 3
 --- !u!114 &633573725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58727,6 +58729,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &633573727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633573722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9739a3ccbbaa0574fb06f131b43caa9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  textDelay: 3
 --- !u!1001 &633602712
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -92079,6 +92095,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 1
+  textDelay: 3
 --- !u!114 &983469146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95502,7 +95519,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 68bdfd10f52edc84e845491aafee66a0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c122013868211634ca10864f7374e7eb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -145181,6 +145198,7 @@ MonoBehaviour:
   score: 0
   rounds: 10
   totalRounds: 10
+  cpuScore: 0
   goalSound: {fileID: 571796985}
 --- !u!65 &1532351263
 BoxCollider:
@@ -185620,7 +185638,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 671dfab2abc743941a06ae047507802a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 47e90fd9049f55b4b8ed858abaf25c63, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -206434,7 +206452,7 @@ MonoBehaviour:
   shootDelay: 5
   Rounds: 10
   goalClip: {fileID: 8300000, guid: 7a58a9d4cfba97d44838a6d9281faea8, type: 3}
-  sceneToLoad: 6
+  sceneToLoad: 5
   destroyTime: 2
   soundDelay: 6
   indicators:

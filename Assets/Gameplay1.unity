@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.6416503, g: 0.5053258, b: 0.2076244, a: 1}
+  m_IndirectSpecularColor: {r: 0.66388565, g: 0.51061565, b: 0.21608777, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -49462,6 +49462,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 1
+  textDelay: 3
 --- !u!1001 &503073691
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -74259,7 +74260,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bdfe869511ac33b4581cfa6f1c542201, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ff63bdc3814b8ed40b1f2e45b823887b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -101926,6 +101927,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 0
+  textDelay: 3
 --- !u!1001 &1067429210
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -149980,6 +149982,7 @@ MonoBehaviour:
   score: 0
   rounds: 5
   totalRounds: 5
+  cpuScore: 0
   goalSound: {fileID: 1243956542}
 --- !u!65 &1532351263
 BoxCollider:
@@ -151371,7 +151374,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: cda8764ec27d0954786db45caabe422d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f7abb8780dc69e2449f36399b0cb76c5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -213173,7 +213176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ball: {fileID: 6068082213793675115, guid: 68e94e333abba9a4d8e01342bb14a9d2, type: 3}
   miniForce: 10
-  maxForce: 16
+  maxForce: 13
   goles: {fileID: 1532351262}
   startDelay: 9.8
   spawnInterval: 6

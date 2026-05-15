@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
 public class ScoreUI : MonoBehaviour
 {
@@ -9,15 +10,18 @@ public class ScoreUI : MonoBehaviour
     [Header("True = Player | False = CPU")]
     public bool isPlayer = true;
 
+    public float textDelay = 3f;
+
+    private int lastValue = -999;
+    private Coroutine updateRoutine;
+
     void Awake()
     {
-        // Gets the TMP component from this same object
         scoreText = GetComponent<TMP_Text>();
     }
 
     void Start()
     {
-        // Gets your DontDestroyOnLoad singleton
         goles = Goal.goaaal;
     }
 
@@ -27,9 +31,24 @@ public class ScoreUI : MonoBehaviour
 
         int value = isPlayer
             ? goles.score
-            : goles.totalRounds - goles.score;
+            : goles.cpuScore - goles.score;
 
-        // 00, 01, 02...
+        // Only trigger if value changed
+        if (value != lastValue)
+        {
+            lastValue = value;
+
+            if (updateRoutine != null)
+                StopCoroutine(updateRoutine);
+
+            updateRoutine = StartCoroutine(UpdateTextDelayed(value));
+        }
+    }
+
+    IEnumerator UpdateTextDelayed(int value)
+    {
+        yield return new WaitForSeconds(textDelay);
+
         scoreText.text = value.ToString("00");
     }
 }

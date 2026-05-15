@@ -50,15 +50,12 @@ public class BallSpawner : MonoBehaviour
 
         goles.ResetGameStats(Rounds);
 
-        Debug.Log("BallSpawner initialized in scene: " + gameObject.scene.name);
 
         InvokeRepeating(nameof(SpawnBall), startDelay, spawnInterval);
     }
 
     void SpawnBall()
     {
-        Debug.Log("=== SpawnBall CALLED ===");
-
         // New ball = hide all indicators
         SetIndicators(false);
 
@@ -100,6 +97,7 @@ public class BallSpawner : MonoBehaviour
             {
                 goles.totalRounds = Rounds;
                 goles.score = 0;
+                goles.cpuScore = 0;
 
                 StartCoroutine(GoToScoreScenePlay());
             }

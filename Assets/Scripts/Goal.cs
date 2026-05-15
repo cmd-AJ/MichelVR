@@ -7,6 +7,8 @@ public class Goal : MonoBehaviour
     public int rounds;
     public int totalRounds;
 
+    public int cpuScore;
+
     [Header("Audio")]
     public AudioSource goalSound;
 
@@ -17,7 +19,6 @@ public class Goal : MonoBehaviour
         // Singleton setup
         if (goaaal != null && goaaal != this)
         {
-            Debug.Log("Duplicate Goal found. Destroying: " + gameObject.name);
             Destroy(gameObject);
             return;
         }
@@ -25,7 +26,6 @@ public class Goal : MonoBehaviour
         goaaal = this;
         DontDestroyOnLoad(gameObject);
 
-        Debug.Log("Goal singleton created: " + gameObject.name);
     }
 
     /// <summary>
@@ -38,10 +38,6 @@ public class Goal : MonoBehaviour
         rounds = newRounds;
         totalRounds = newRounds;
 
-        Debug.Log("=== Goal Reset ===");
-        Debug.Log("Score reset to: " + score);
-        Debug.Log("Rounds set to: " + rounds);
-        Debug.Log("Total rounds set to: " + totalRounds);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -50,14 +46,16 @@ public class Goal : MonoBehaviour
         {
             score++;
 
-            Debug.Log("Goal scored! Current score: " + score);
-
             if (goalSound != null)
             {
                 goalSound.Play();
             }
 
             Destroy(other.gameObject);
+        }
+        else
+        {
+            cpuScore++;
         }
     }
 }

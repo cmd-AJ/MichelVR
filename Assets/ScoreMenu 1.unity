@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 2ef23d74b6f622f47902900ca34af20f, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 8d149c6168d974c438ca3e1d73e5378d, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17429009, g: 0.14569867, b: 0.10612587, a: 1}
+  m_IndirectSpecularColor: {r: 0.6416503, g: 0.5053258, b: 0.2076244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -450930,7 +450930,7 @@ GameObject:
   - component: {fileID: 1992337943}
   - component: {fileID: 1992337942}
   m_Layer: 0
-  m_Name: Group 100
+  m_Name: SpriteGameOver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -450977,7 +450977,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9a7c879c376b1c84187acc4bcdfa6bfb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a613b976ea50f70468f9729a754b5b64, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

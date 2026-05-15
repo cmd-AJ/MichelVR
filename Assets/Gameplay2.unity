@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 2ef23d74b6f622f47902900ca34af20f, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 8d149c6168d974c438ca3e1d73e5378d, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17429009, g: 0.14569867, b: 0.10612587, a: 1}
+  m_IndirectSpecularColor: {r: 0.66388565, g: 0.51061565, b: 0.21608777, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -12005,7 +12005,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: f1578064d6249e142aac64fb91d677d5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d29e5b377f1be6644a85bcbeb65cf272, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -74301,7 +74301,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4b74fbe69ae854442831a66936ec9196, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8ff0f1c8c8fbcab4cb08690182d11c28, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -149591,6 +149591,7 @@ MonoBehaviour:
   score: 0
   rounds: 5
   totalRounds: 5
+  cpuScore: 0
   goalSound: {fileID: 1243956542}
 --- !u!65 &1532351263
 BoxCollider:
@@ -160217,6 +160218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 1
+  textDelay: 0.5
 --- !u!114 &1634771488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184964,6 +184966,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 0
+  textDelay: 2
 --- !u!114 &1870327591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213075,7 +213078,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ball: {fileID: 6068082213793675115, guid: 68e94e333abba9a4d8e01342bb14a9d2, type: 3}
   miniForce: 10
-  maxForce: 16
+  maxForce: 13
   goles: {fileID: 1532351262}
   startDelay: 9.8
   spawnInterval: 6

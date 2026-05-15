@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 2ef23d74b6f622f47902900ca34af20f, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 8d149c6168d974c438ca3e1d73e5378d, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17429009, g: 0.14569867, b: 0.10612587, a: 1}
+  m_IndirectSpecularColor: {r: 0.66388565, g: 0.51061565, b: 0.21608777, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4241,6 +4241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 1
+  textDelay: 3
 --- !u!114 &42169312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74461,7 +74462,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b20f5e1cefdfa3e428ac36726e502734, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 073f1ca5ac9d01243b1c7db337096ace, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -82948,7 +82949,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 92e2d7a7d90d92e48b99b8891a25e25a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 920fd0650e75c8c4b811724682078b7c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -149938,6 +149939,7 @@ MonoBehaviour:
   score: 0
   rounds: 5
   totalRounds: 5
+  cpuScore: 0
   goalSound: {fileID: 1243956542}
 --- !u!65 &1532351263
 BoxCollider:
@@ -150405,8 +150407,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1534900184}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.022946432, y: 0.015294009, z: 0.00035107357, w: 0.9996197}
-  m_LocalPosition: {x: -17.807333, y: -63.2, z: 212.96791}
+  m_LocalRotation: {x: -0.02996243, y: 0.015291167, z: 0.00045841717, w: 0.999434}
+  m_LocalPosition: {x: -17.807388, y: -63.200058, z: 212.96606}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -150415,7 +150417,7 @@ Transform:
   - {fileID: 149180152}
   - {fileID: 1883134733}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: -2.63, y: 1.753, z: 0}
+  m_LocalEulerAnglesHint: {x: -3.434, y: 1.753, z: 0}
 --- !u!1001 &1535659149
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -174124,6 +174126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 0
+  textDelay: 2
 --- !u!114 &1759645287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213073,7 +213076,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ball: {fileID: 6068082213793675115, guid: 68e94e333abba9a4d8e01342bb14a9d2, type: 3}
   miniForce: 10
-  maxForce: 16
+  maxForce: 13
   goles: {fileID: 1532351262}
   startDelay: 9.8
   spawnInterval: 6
@@ -213082,7 +213085,7 @@ MonoBehaviour:
   shootDelay: 5
   Rounds: 5
   goalClip: {fileID: 8300000, guid: 7a58a9d4cfba97d44838a6d9281faea8, type: 3}
-  sceneToLoad: 5
+  sceneToLoad: 6
   destroyTime: 2
   soundDelay: 6
   indicators:
