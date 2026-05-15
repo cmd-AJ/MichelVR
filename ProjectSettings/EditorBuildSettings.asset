@@ -18,13 +18,16 @@ EditorBuildSettings:
     path: Assets/Gameplay2.unity
     guid: 9516790390ef3d443928e57375068d0c
   - enabled: 1
-    path: Assets/Gameplay3.unity
+    path: Assets/Gameplay4.unity
     guid: fdfa9c394d75bc841bb8d89454c6dc27
   - enabled: 1
-    path: Assets/Gameplay4.unity
+    path: Assets/Gameplay3.unity
     guid: e97cf248f6693514a8da5123c23d0b88
   - enabled: 1
     path: Assets/Gameplay5.unity
+    guid: da821c7f3218fae458178618e4a6c3b5
+  - enabled: 0
+    path: Assets/Gameplay5off.unity
     guid: b1266320502a5fa43a0bde9207691f83
   - enabled: 1
     path: Assets/Scenes/WIN.unity

@@ -7,7 +7,6 @@ public class BallSpawner : MonoBehaviour
 {
     public GameObject ball;
 
-    //[Header("Force")]
     private float force;
     public float miniForce;
     public float maxForce;
@@ -31,16 +30,43 @@ public class BallSpawner : MonoBehaviour
     public float destroyTime = 10f;
 
     [Header("Audio")]
-    public float soundDelay = 6f; // 👈 when the sound should play
+    public float soundDelay = 6f;
+
+    [Header("Indicators")]
+    public GameObject[] indicators;
 
     void Start()
     {
-        InvokeRepeating("SpawnBall", startDelay, spawnInterval);
+        goles = Goal.goaaal;
+
+        if (goles == null)
+        {
+            Debug.LogError("Goal singleton not found!");
+            return;
+        }
+
+        // Hide all indicators at start
+
+
+        goles.ResetGameStats(Rounds);
+
+        Debug.Log("BallSpawner initialized in scene: " + gameObject.scene.name);
+
+        InvokeRepeating(nameof(SpawnBall), startDelay, spawnInterval);
     }
 
     void SpawnBall()
     {
-        GameObject ballInstance = Instantiate(ball, transform.position, ball.transform.rotation);
+        Debug.Log("=== SpawnBall CALLED ===");
+
+        // New ball = hide all indicators
+        SetIndicators(false);
+
+        GameObject ballInstance = Instantiate(
+            ball,
+            transform.position,
+            ball.transform.rotation
+        );
 
         float xpos = Random.Range(miniPos.position.x, maxPos.position.x);
         float ypos = Random.Range(miniPos.position.y, maxPos.position.y);
@@ -49,36 +75,61 @@ public class BallSpawner : MonoBehaviour
         force = Random.Range(miniForce, maxForce);
 
         Vector3 shootPos = new Vector3(xpos, ypos, zpos);
-        Vector3 shoot = -(ballInstance.transform.position - shootPos).normalized;
+        Vector3 shootDirection =
+            -(ballInstance.transform.position - shootPos).normalized;
 
-        ballInstance.GetComponent<Rigidbody>().AddForce(shoot * force, ForceMode.Impulse);
+        Rigidbody rb = ballInstance.GetComponent<Rigidbody>();
 
-        // ✅ Play sound after delay (instead of immediately)
+        if (rb != null)
+        {
+            rb.AddForce(shootDirection * force, ForceMode.Impulse);
+        }
+
         StartCoroutine(PlaySoundAfterDelay(ballInstance, soundDelay));
 
-        // ✅ Destroy after X seconds
-        Destroy(ballInstance, destroyTime);
+        StartCoroutine(DestroyBall(ballInstance));
 
-        goles.rounds = goles.rounds - 1;
-        Debug.Log("Rounds left: " + goles.rounds);
+        goles.rounds--;
 
         if (goles.rounds == 0)
         {
-            Debug.Log("No rounds left!");
-
             int halfRounds = Mathf.FloorToInt(goles.totalRounds / 2f);
+            int result = goles.score - halfRounds;
 
-            Debug.Log(goles.score - halfRounds);
-
-            if (goles.score - halfRounds <= 0)
+            if (result <= 0)
             {
-                Debug.Log("Score condition met → GoToScoreScenePlay()");
+                goles.totalRounds = Rounds;
+                goles.score = 0;
+
                 StartCoroutine(GoToScoreScenePlay());
             }
             else
             {
-                Debug.Log("Score condition NOT met → GoToScoreScene()");
                 StartCoroutine(GoToScoreScene());
+            }
+        }
+    }
+
+    IEnumerator DestroyBall(GameObject ballInstance)
+    {
+        yield return new WaitForSeconds(destroyTime);
+
+        // Ball destroyed = show ALL indicators
+        SetIndicators(true);
+
+        if (ballInstance != null)
+        {
+            Destroy(ballInstance);
+        }
+    }
+
+    void SetIndicators(bool state)
+    {
+        foreach (GameObject indicator in indicators)
+        {
+            if (indicator != null)
+            {
+                indicator.SetActive(state);
             }
         }
     }
@@ -87,12 +138,16 @@ public class BallSpawner : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
 
-        if (ballInstance != null) // make sure it still exists
+        if (ballInstance != null)
         {
             AudioSource audio = ballInstance.GetComponent<AudioSource>();
+
             if (audio != null)
             {
-                AudioSource.PlayClipAtPoint(goalClip, ballInstance.transform.position);
+                AudioSource.PlayClipAtPoint(
+                    goalClip,
+                    ballInstance.transform.position
+                );
             }
         }
     }
@@ -107,10 +162,5 @@ public class BallSpawner : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene(sceneToLoad);
-    }
-
-    IEnumerator WaitBall()
-    {
-        yield return new WaitForSeconds(3f);
     }
 }

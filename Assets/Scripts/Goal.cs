@@ -1,38 +1,56 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Goal : MonoBehaviour
 {
+    [Header("Game Stats")]
     public int score;
     public int rounds;
+    public int totalRounds;
 
+    [Header("Audio")]
     public AudioSource goalSound;
 
-    public int totalRounds;
-    public BallSpawner ballSpawner;
     public static Goal goaaal;
+
     private void Awake()
     {
-        if (goaaal != null)
+        // Singleton setup
+        if (goaaal != null && goaaal != this)
         {
+            Debug.Log("Duplicate Goal found. Destroying: " + gameObject.name);
             Destroy(gameObject);
             return;
         }
+
         goaaal = this;
         DontDestroyOnLoad(gameObject);
 
+        Debug.Log("Goal singleton created: " + gameObject.name);
     }
-    private void Start()
+
+    /// <summary>
+    /// Call this every time a new scene starts
+    /// to reset score and setup new rounds.
+    /// </summary>
+    public void ResetGameStats(int newRounds)
     {
-        goaaal.score = 0;
-        goaaal.rounds = rounds;
+        score = 0;
+        rounds = newRounds;
+        totalRounds = newRounds;
+
+        Debug.Log("=== Goal Reset ===");
+        Debug.Log("Score reset to: " + score);
+        Debug.Log("Rounds set to: " + rounds);
+        Debug.Log("Total rounds set to: " + totalRounds);
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Ball"))
         {
-            goaaal.score++;
+            score++;
+
+            Debug.Log("Goal scored! Current score: " + score);
 
             if (goalSound != null)
             {
